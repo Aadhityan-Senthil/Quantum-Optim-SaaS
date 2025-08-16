@@ -1,0 +1,91 @@
+{
+  "name": "quantumoptim-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QuantumOptim by AYNX AI - Enterprise Quantum Optimization Platform",
+  "keywords": [
+    "quantum optimization",
+    "AI optimization",
+    "supply chain",
+    "portfolio optimization",
+    "business optimization",
+    "quantum computing",
+    "AYNX AI"
+  ],
+  "author": {
+    "name": "AYNX AI",
+    "email": "support@aynx.ai",
+    "url": "https://aynx.ai"
+  },
+  "homepage": "https://quantumoptim.aynx.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aadhityan-Senthil/quantumoptim-saas.git"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "typescript": "^4.9.4",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "tailwindcss": "^3.2.4",
+    "@headlessui/react": "^1.7.7",
+    "@heroicons/react": "^2.0.13",
+    "framer-motion": "^8.5.2",
+    "recharts": "^2.5.0",
+    "react-query": "^3.39.3",
+    "axios": "^1.2.6",
+    "react-hook-form": "^7.43.0",
+    "@stripe/stripe-js": "^1.46.0",
+    "@stripe/react-stripe-js": "^1.16.4",
+    "react-helmet-async": "^1.3.0",
+    "react-hot-toast": "^2.4.0",
+    "zustand": "^4.3.2",
+    "@react-three/fiber": "^8.9.1",
+    "@react-three/drei": "^9.50.0",
+    "three": "^0.148.0",
+    "lottie-react": "^2.3.1",
+    "react-intersection-observer": "^9.4.1",
+    "react-syntax-highlighter": "^15.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.0.1",
+    "vite": "^4.0.4",
+    "vite-plugin-pwa": "^0.14.1",
+    "@types/three": "^0.148.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "eslint": "^8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "prettier": "^2.8.3",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --ext ts,tsx --fix",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "type-check": "tsc --noEmit",
+    "analyze": "npx vite-bundle-analyzer"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
