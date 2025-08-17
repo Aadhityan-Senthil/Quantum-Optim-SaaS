@@ -32,8 +32,14 @@ async def lifespan(app: FastAPI):
     """Application lifespan manager"""
     # Startup
     logger.info("🚀 Starting QuantumOptim by AYNX AI")
-    await create_tables()
-    await setup_monitoring()
+    try:
+        await create_tables()
+    except Exception as exc:
+        logger.warning("Database init failed; continuing startup without DB: %s", exc)
+    try:
+        await setup_monitoring()
+    except Exception as exc:
+        logger.warning("Monitoring setup failed; continuing startup: %s", exc)
     yield
     # Shutdown
     logger.info("🛑 Shutting down QuantumOptim by AYNX AI")
