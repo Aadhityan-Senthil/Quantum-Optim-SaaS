@@ -21,8 +21,8 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install Python dependencies (building from repo root context)
-COPY backend/requirements.txt ./requirements.txt
+# Copy slim API requirements and install dependencies (from repo root context)
+COPY backend/requirements.api.txt ./requirements.txt
 RUN pip install --no-cache-dir --user -r requirements.txt
 
 # Production stage

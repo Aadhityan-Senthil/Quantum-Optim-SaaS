@@ -1,0 +1,44 @@
+# QuantumOptim SaaS - API-only Dependencies (slim for Railway deploy)
+# Excludes heavy scientific/quantum libs to keep image size small
+
+# Core framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Database & ORM
+sqlalchemy==2.0.23
+asyncpg==0.29.0
+alembic==1.13.0
+
+# Caching (client only for API; Celery not included here)
+redis==5.0.1
+
+# Auth & security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+cryptography==41.0.7
+
+# Monitoring & logging
+sentry-sdk[fastapi,sqlalchemy,redis]==1.38.0
+structlog==23.2.0
+python-json-logger==2.0.7
+
+# Payments (optional but lightweight)
+razorpay==1.4.1
+stripe==7.8.0
+
+# Email & templating
+fastapi-mail==1.4.1
+jinja2==3.1.2
+
+# HTTP clients
+httpx==0.25.2
+requests==2.31.0
+
+# Utilities
+python-dotenv==1.0.0
+click==8.1.7
+validators==0.22.0
