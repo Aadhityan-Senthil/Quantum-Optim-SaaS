@@ -13,7 +13,8 @@ import time
 import logging
 from contextlib import asynccontextmanager
 
-from app.api.routes import api_router
+from fastapi import APIRouter
+from app.api import routes as api_router_module
 from app.core.config import settings
 from app.core.security import SecurityMiddleware
 from app.db.database import create_tables
@@ -122,6 +123,8 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 # API Routes
+api_router = APIRouter()
+api_router.include_router(api_router_module.router, prefix="")
 app.include_router(api_router, prefix="/api/v1")
 
 # Health check endpoints

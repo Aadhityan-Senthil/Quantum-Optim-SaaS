@@ -21,8 +21,8 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install Python dependencies
-COPY requirements.txt .
+# Copy requirements and install Python dependencies (building from repo root context)
+COPY backend/requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir --user -r requirements.txt
 
 # Production stage
@@ -46,8 +46,8 @@ USER app
 # Add local bin to PATH
 ENV PATH=/home/app/.local/bin:$PATH
 
-# Copy application code
-COPY --chown=app:app . .
+# Copy application code from backend directory (repo root is build context)
+COPY --chown=app:app backend/ .
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
