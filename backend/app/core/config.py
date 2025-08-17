@@ -49,6 +49,7 @@ class Settings(BaseSettings):
     
     # Trusted hosts for security
     ALLOWED_HOSTS: List[str] = [
+        "*",  # Allow all hosts (ensures platform healthchecks are not blocked)
         "quantumoptim.aynx.ai",
         "api.quantumoptim.aynx.ai",
         "*.railway.app",
