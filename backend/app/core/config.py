@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     # Database
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL", 
-        "postgresql://postgres:password@localhost:5432/quantumoptim"
+        "sqlite+aiosqlite:///./app.db"
     )
     
     # Redis
@@ -51,6 +51,7 @@ class Settings(BaseSettings):
     ALLOWED_HOSTS: List[str] = [
         "quantumoptim.aynx.ai",
         "api.quantumoptim.aynx.ai",
+        "*.railway.app",
         "localhost",
         "127.0.0.1"
     ]

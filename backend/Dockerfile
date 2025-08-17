@@ -49,9 +49,7 @@ ENV PATH=/home/app/.local/bin:$PATH
 # Copy application code from backend directory (repo root is build context)
 COPY --chown=app:app backend/ .
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-  CMD python -c "import requests; requests.get('http://localhost:8000/health')"
+# Health check handled by Railway via railway.json; container-level healthcheck removed to avoid port mismatch
 
 # Expose port
 EXPOSE 8000
