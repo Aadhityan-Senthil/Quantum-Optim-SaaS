@@ -33,12 +33,8 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 ENV ENVIRONMENT=production
 
-# Install runtime dependencies
-RUN apt-get update && apt-get install -y \
-    libopenblas-base \
-    libgomp1 \
-    && rm -rf /var/lib/apt/lists/* \
-    && useradd --create-home --shell /bin/bash app
+# Install runtime dependencies (disabled to avoid OOM on Railway; relying on manylinux wheels)
+RUN useradd --create-home --shell /bin/bash app
 
 # Copy installed packages from builder
 COPY --from=builder /root/.local /home/app/.local
